@@ -1,6 +1,8 @@
+// server.js
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+import dotenv from "dotenv";
 
 import productRoutes from "./Routes/productRoutes.js";
 import categoryRoutes from "./Routes/categoryRoutes.js";
@@ -9,30 +11,40 @@ import cartRoutes from "./Routes/cartRoutes.js";
 import authRoutes from "./Routes/authRoutes.js";
 import favoriteRoutes from "./Routes/favoriteRoutes.js";
 
+dotenv.config(); // load .env
+
 const app = express();
 
-// middleware
-app.use(cors());
+// Use port from .env or fallback to 5000
+const PORT = process.env.PORT || 5000;
+
+// Middleware
+app.use(cors({
+  origin: "http://localhost:5174", // URL of your Vue frontend
+  credentials: true,
+}));
 app.use(express.json());
 
-// connect to MongoDB
+// Connect to MongoDB
 mongoose
-  .connect("mongodb://127.0.0.1:27017/clothes-store")
-  .then(() => {
-    console.log("MongoDB connected");
-  })
-  .catch((err) => {
-    console.log("Database error:", err);
-  });
+  .connect("mongodb://127.0.0.1:27017/Store")
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.log("Database error:", err));
 
-// routes
+// Routes
 app.use("/products", productRoutes);
 app.use("/categories", categoryRoutes);
 app.use("/users", userRoutes);
 app.use("/cart", cartRoutes);
 app.use("/auth", authRoutes);
 app.use("/favorites", favoriteRoutes);
-// start server
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
+
+// Default route
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
+
+// Start server
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
 });

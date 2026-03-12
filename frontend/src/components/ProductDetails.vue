@@ -21,7 +21,7 @@ const isAdding = ref(false);
 // Fetch product
 const fetchProduct = async () => {
   try {
-    const res = await fetch(`http://localhost:3001/products/${id}`);
+    const res = await fetch(`http://localhost:5000/products/${id}`);
     const data = await res.json();
     product.value = data;
     currentIndex.value = 0;
