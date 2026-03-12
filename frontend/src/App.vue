@@ -1,7 +1,12 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import Navbar from "./components/Navbar.vue"
+import { createAppContext } from "./context/AppContext";
+
+createAppContext();
 </script>
 
 <template>
-  <HelloWorld />
+  <Navbar />
+
+  <router-view />
 </template>
