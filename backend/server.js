@@ -31,7 +31,7 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log("Database error:", err));
 
-// Routes
+// All Routes
 app.use("/products", productRoutes);
 app.use("/categories", categoryRoutes);
 app.use("/users", userRoutes);
