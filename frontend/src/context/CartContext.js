@@ -15,7 +15,7 @@ export function createCartContext() {
   const fetchCart = async () => {
     if (!token) return;
     try {
-      const res = await fetch("http://localhost:3001/cart", {
+      const res = await fetch("http://localhost:5000/cart", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -42,7 +42,7 @@ export function createCartContext() {
       return false;
     }
     try {
-      const res = await fetch("http://localhost:3001/cart/add", {
+      const res = await fetch("http://localhost:5000/cart/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -74,7 +74,7 @@ export function createCartContext() {
       return;
     }
     try {
-      const res = await fetch(`http://localhost:3001/cart/update/${cartItemId}`, {
+      const res = await fetch(`http://localhost:5000/cart/update/${cartItemId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -102,7 +102,7 @@ export function createCartContext() {
       return;
     }
     try {
-      const res = await fetch(`http://localhost:3001/cart/remove/${cartItemId}`, {
+      const res = await fetch(`http://localhost:5000/cart/remove/${cartItemId}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });

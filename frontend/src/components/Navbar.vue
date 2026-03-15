@@ -32,7 +32,7 @@ const role = ref(null)
 
 onMounted(async () => {
   try {
-    const res = await fetch("http://localhost:3001/categories")
+    const res = await fetch("http://localhost:5000/categories")
     categories.value = await res.json()
   } catch (err) {
     console.error(err)
@@ -49,7 +49,7 @@ const handleSearch = async (query) => {
 
   try {
     const res = await fetch(
-      `http://localhost:3001/products/search?name=${encodeURIComponent(query)}`
+      `http://localhost:5000/products/search?name=${encodeURIComponent(query)}`
     )
 
     if (res.ok) {

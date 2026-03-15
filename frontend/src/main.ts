@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
-
+import './assets/index.css'
 // Vue 3 toastification
 import Toast, { POSITION } from "vue-toastification";
 import "vue-toastification/dist/index.css";
