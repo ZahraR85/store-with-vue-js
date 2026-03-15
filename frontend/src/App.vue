@@ -1,6 +1,6 @@
 <script setup>
 import Navbar from "./components/Navbar.vue"
-
+import Footer from "./components/Footer.vue"
 import { createAppContext } from "./context/AppContext"
 import { createFavoritesContext } from "./context/FavoriteContext"
 
@@ -12,4 +12,5 @@ createFavoritesContext(appContext.isAuthenticated)
 <template>
   <Navbar />
   <router-view />
+  <Footer />
 </template>
