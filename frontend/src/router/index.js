@@ -1,6 +1,5 @@
 // src/router/index.js
 import { createRouter, createWebHistory } from "vue-router";
-import { userStore } from "../store/user"; // Store سراسری
 
 import Layout from "../pages/Layout.vue";
 import SignIn from "../Auth/SignIn.vue";

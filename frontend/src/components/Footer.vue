@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink } from "vue-router"
-import logo from "../images/Logo.png"
+//import logo from "../images/Logo.png"
 </script>
 
 <template>
@@ -15,7 +15,7 @@ import logo from "../images/Logo.png"
               Home
             </RouterLink>
           </li>
-
+    <!--
           <li>
             <RouterLink to="/aboutus" class="hover:underline">
               About Us
@@ -27,6 +27,7 @@ import logo from "../images/Logo.png"
               FAQ
             </RouterLink>
           </li>
+!-->
         </ul>
       </div>
 
@@ -34,12 +35,13 @@ import logo from "../images/Logo.png"
       <div
         class="border-t border-BgKhakiDark md:border-t-0 md:border-l md:border-r md:px-6 flex flex-col items-center"
       >
+      <!--
         <img
           :src="logo"
           alt="I Said Yes Logo"
           class="w-24 h-auto mb-4 md:w-32"
         />
-
+!-->
         <p class="text-xs md:text-sm mb-4 hidden md:block">
           Buy all thing in your Dreams!
         </p>

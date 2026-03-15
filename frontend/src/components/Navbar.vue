@@ -86,11 +86,11 @@ const signOut = () => {
       <router-link to="/" class="text-BgFont">
         🏠
       </router-link>
-
+<!--
       <router-link to="/" class="hidden lg:block">
         <img src="../images/Logo.png" class="h-16"/>
       </router-link>
-
+-->
       <ul class="flex items-center gap-6 text-BgFont font-bold">
 
         <li>
